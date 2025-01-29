@@ -1,0 +1,171 @@
+<!-- This is an example file that shows simple ways to organize a webpage using divs and flex -->
+
+<!DOCTYPE html> 
+<html lang="en-us">
+  <head>
+    <title>Organizing HTML</title> 
+
+  </head> 
+
+  <body class="flex-col">BODY
+
+        <div class="l1-container fill-equally flex-row">DIV
+            <div class="l2-container fill-equally">DIV</div>
+            <div class="l2-container fill-equally">DIV</div>
+            <div class="l2-container fill-equally">DIV</div>
+
+        </div>
+
+        <div class="l1-container fill-equally flex-col">DIV
+            <div class="l2-container fill-equally">DIV</div>
+            <div class="l2-container fill-equally">DIV</div>
+            <div class="l2-container fill-equally">DIV</div>
+        </div>
+
+        <div class="l1-container flex-row left-align fill-equally">DIV
+            <div class="l2-container half-container">DIV</div>
+        </div>
+
+        <div class="l1-container flex-row center fill-equally">DIV
+            <div class="l2-container half-container">DIV</div>
+        </div>
+
+        <div class="l1-container flex-row right-align fill-equally">DIV
+            <div class="l2-container half-container">DIV</div>
+        </div>
+
+        <div class="l1-container fill-equally">DIV
+            <div class="l2-container fill-equally flex-row">DIV
+                <div class="l3-container fill-equally">DIV
+
+                </div>
+                <div class="l3-container fill-equally">DIV
+    
+                </div>
+                <div class="l3-container fill-equally">DIV
+                    
+                </div>
+
+            </div>
+            <div class="l2-container fill-equally">DIV
+                <div class="l3-container fill-equally">DIV
+
+                </div>
+                <div class="l3-container fill-equally">DIV
+    
+                </div>
+                <div class="l3-container fill-equally">DIV
+                    
+                </div>
+
+            </div>
+
+    
+        </div>
+
+        <div class="l1-container fill-equally flex-row">DIV
+            <div class="l2-container fill-equally flex-row">DIV
+                <div class="l3-container fill-equally">DIV
+
+                </div>
+
+                <div class="l3-container fill-equally">DIV
+    
+                </div>
+
+                <div class="l3-container fill-equally">DIV
+                    
+                </div>
+
+            </div>
+
+            <div class="l2-container fill-equally">DIV
+                <div class="l3-container fill-equally">DIV
+
+                </div>
+
+                <div class="l3-container fill-equally">DIV
+    
+                </div>
+
+                <div class="l3-container fill-equally">DIV
+                    
+                </div>
+
+            </div>
+    
+        </div>
+    
+
+
+
+
+
+  </body> 
+</html> 
+
+<style>
+    * {
+        margin:5px;
+        padding:5px;
+        border:2pt dashed black;
+    }
+    html{
+        margin:0;
+        padding:0;
+        display:flex;
+        flex-direction:column;
+    }
+    body{
+        flex:1;
+        margin:5px 10%;
+        border:2pt dashed black;
+        background-color:tan;
+        height: 100vh;
+    }
+
+    .l1-container{
+        background-color:gray;
+
+    }
+
+    .l2-container{
+        background-color:lightgreen;
+    }
+
+    .l3-container{
+        background-color:lightcyan;
+    }
+
+    .fill-equally{
+        flex:1;
+    }
+
+    .flex-row{
+        display:flex;
+        flex-direction:row;
+    }
+
+    .flex-col{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .center{
+        justify-content:center;
+
+    }
+
+    .left-align{
+        justify-content:left;
+    }
+
+    .right-align{
+        justify-content:right;
+    }
+
+
+    .half-container{
+        width:50%;
+    }
+</style>

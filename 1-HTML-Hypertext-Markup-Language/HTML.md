@@ -95,8 +95,56 @@ OR
 </tag>
 ```
 
+<br>
 
+## `Parent and Child Elements`
 
+A `parent element` is an element that contains other elements called `child elements`.
+
+<br>
+
+A `child element` is an element that is contained within another element called a `parent element`
+* child elements are typically indented inside of their parent element. 
+
+<br>
+
+syntax:
+```
+<parent><child></child></parent>
+```
+```
+<parent>
+
+    <child></child>
+
+</parent>
+```
+
+example:
+```html
+<html> <!-- Parent of: head, body; Child of: none -->
+
+    <head> <!-- Parent of: title; Child of: html -->
+
+        <title></title><!-- Parent of: none; Child of: head -->
+
+    </head> 
+    
+    <body> <!-- Parent of: div; Child of: html -->
+
+        <div> <!-- Parent of: h1, p; Child of: body -->
+
+            <h1></h1> <!-- Parent of: none; Child of: div -->
+            
+            <p> <!-- Parent of: a; Child of: div -->
+
+                <a></a> <!-- Parent of: none; Child of: p -->
+                
+            </p> 
+        </div>
+    </body>
+</html>
+```
 
 <br>
 
@@ -161,6 +209,8 @@ ___
 When you're writing HTML code, it's a good idea to organize it neatly. You can do this by adding spaces or tabs at the beginning of each line to create a consistent structure. For every child element (like a paragraph or heading) inside a parent element (like a section or body), you should indent them to show their relationship. 
 
 This helps make your HTML code more readable and easier to understand. 
+
+
 
 
 ```html

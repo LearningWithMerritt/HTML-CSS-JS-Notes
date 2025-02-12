@@ -71,7 +71,7 @@ The `CSS Box Model` describes the layout of html elements as a box with content,
   +---------------------------------------------+
 ```
 
-![CSS Box Model Diagram](../img/CSS_Box_Model_Diagram.svg)
+![CSS Box Model Diagram](./img/CSS_Box_Model_Diagram.svg)
 
 
 
@@ -89,14 +89,14 @@ The `cascade` in CSS is the process that determines which styles are applied to 
 
 * `Order of Appearance:` When two rules have the same specificity, the style that appears later in the CSS or document takes precedence.
 
-![Cascade](../img/Cascade.svg)
+![Cascade](./img/Cascade.svg)
 
 <br>
 
 ## `Inheritence`
 `Inheritance` in CSS refers to how certain properties are passed down from parent elements to their children. If a property is inheritable, child elements will inherit the property value from their parent element unless it is explicitly overridden.
 
-![Inheritence](../img/Inheritence.svg)
+![Inheritence](./img/Inheritence.svg)
 
 <br>
 
@@ -113,7 +113,7 @@ Specificity is a scoring system that ranks CSS selectors based on their types.
 
 <br>
 
-![Specificity](../img/Specificity.svg)
+![Specificity](./img/Specificity.svg)
 
 <br>
 
@@ -393,7 +393,7 @@ RGB Values can be represented in Decimal or Hexadecimal formats:
 
 <br>
 
-![RGB Table](../img/RGB-Table.svg)
+![RGB Table](./img/RGB-Table.svg)
 
 <br>
 

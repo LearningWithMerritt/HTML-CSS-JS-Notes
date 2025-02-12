@@ -1,0 +1,35 @@
+/* Styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styling for the header with ID */
+  #header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Styling for paragraphs */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  /* Class for highlighting important text */
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+  
+  /* Styling for links when hovered */
+  a:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+  }

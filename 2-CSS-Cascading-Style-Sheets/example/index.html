@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Example</title>
+
+    <!-- External CSS >>> links to styles.css -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Internal CSS for additional styling */
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #main-content {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome to My Website</h1>
+    </div>
+
+    <div id="main-content">
+        <p>This is a paragraph of text on the page. It contains some normal text.</p>
+        <p class="highlight">This is an important message. It's highlighted in yellow and bold!</p>
+        <p>Here is a link to <a href="https://www.example.com">Example</a> that will change color when hovered.</p>
+        <button class="btn">Click Me</button>
+    </div>
+
+    <div class="footer">
+        <p>Footer Content &copy; 2025</p>
+    </div>
+</body>
+</html>

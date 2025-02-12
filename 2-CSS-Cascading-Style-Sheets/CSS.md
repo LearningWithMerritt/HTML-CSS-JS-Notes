@@ -16,6 +16,7 @@ Covered in this file:
 1. [`Selectors`](#selectors)
 1. [`Classes`](#classes)
 1. [`Pseudo-classes`](#pseudo-classes)
+1. [`Pseudo-elements`](#pseudo-elements)
 1. [`IDs`](#ids)
 1. [`Declarations`](#declarations)
 1. [`Rules`](#rules)
@@ -231,6 +232,42 @@ div:hover{
 }
 ```
 
+<br>
+
+[`Back To Top`](#cascading-style-sheets)
+___
+
+<br>
+
+# `Pseudo-elements`
+A CSS `Pseudo-element` is a keyword that is added to a selector to style specific parts of an element that cannot be directly targeted with a selector.
+
+<br>
+
+```css
+selector::pseudo-element{
+  /* Declaration Block */
+}
+```
+example:
+```css
+div::before{
+  background-color:aqua;
+}
+```
+
+<br>
+
+| **Pseudo-element**  | **Description**| **Example**|
+|-----------------------|--------------------------------------------------------------------|----------------------------------------------------------------------------|
+| `::before`| Inserts content before an element's actual content.| `p::before { content: "Note: "; }`|
+| `::after` | Inserts content after an element's actual content. | `p::after { content: " End of paragraph."; }` |
+| `::first-letter`| Styles the first letter of an element's text.| `p::first-letter { font-size: 2em; color: red; }`|
+| `::first-line`| Styles the first line of an element's text.| `p::first-line { font-weight: bold; }`|
+| `::selection` | Styles the portion of text selected by the user. | `::selection { background: yellow; }`|
+| `::backdrop`| Styles the backdrop of elements like modals or fullscreen elements.| `dialog::backdrop { background: rgba(0, 0, 0, 0.5); }`|
+| `::placeholder` | Styles the placeholder text inside form inputs and textareas.| `input::placeholder { color: gray; }` |
+| `::marker`| Styles the marker (bullet or number) in list items.| `li::marker { color: blue; font-size: 1.5em; }`  |
 
 <br>
 

@@ -12,20 +12,20 @@ Covered in this file:
     1. [`Cascade`](#cascade)
     1. [`Inheritence`](#inheritence)
     1. [`Specificity`](#specificity)
-1. [`Comments`](#comments)
-1. [`Selectors`](#selectors)
-1. [`Classes`](#classes)
-1. [`Pseudo-classes`](#pseudo-classes)
-1. [`Pseudo-elements`](#pseudo-elements)
-1. [`IDs`](#ids)
-1. [`Declarations`](#declarations)
-1. [`Rules`](#rules)
-1. [`Declaration Block`](#declaration-block)
-1. [`RGB Color Values`](#rgb-color-values)
 1. [`Adding CSS to HTML`](#adding-css-to-html)
     1. [`External CSS`](#external-css)
     1. [`Internal CSS`](#internal-css)
     1. [`Inline CSS`](#inline-css)
+1. [`Rules`](#rules)
+1. [`Selectors`](#selectors)
+1. [`Declaration Block`](#declaration-block)
+1. [`Declarations`](#declarations)
+1. [`Comments`](#comments)
+1. [`Classes`](#classes)
+1. [`Pseudo-classes`](#pseudo-classes)
+1. [`Pseudo-elements`](#pseudo-elements)
+1. [`IDs`](#ids)
+1. [`RGB Color Values`](#rgb-color-values)
 1. [`HTML and CSS Example`](#html-and-css-example)
 
 
@@ -123,6 +123,258 @@ ___
 
 <br>
 
+# `Adding CSS to HTML`
+There are 3 ways to add CSS to an HTML File
+* `External CSS` --> In a separate file (`styles.css`)
+* `Internal CSS` --> Inside of `<style>` tags
+* `Inline CSS` --> Using the `style` attribute
+
+<br>
+
+## `External CSS:`
+CSS is stored in a separate external file (styles.css) and linked to the HTML document.
+
+<br>
+
+Use the `<link>` tag embed exteral CSS
+
+syntax
+```
+<link rel="stylesheet" type="text/css" href="<FILEPATH>">
+```
+
+example
+```html
+<link rel="stylesheet" type="text/css" href="styles.css">
+```
+
+External styles.css file
+```css
+body {
+    color: white;
+    background-color:black;
+}
+
+h1 {
+    text-align: center;
+}
+```
+
+<br>
+
+
+## `Internal CSS:`
+The `<style>` tag is used to embed CSS Cascading Style Sheets within the HTML document.
+
+<br>
+
+syntax
+```html
+<style>
+    selector {
+        property:value;
+        property:value;
+        property:value;
+    }
+
+    selector {
+        property:value;
+        property:value;
+        property:value;
+    }
+
+</style>
+```
+
+example
+```html
+<style>
+    body {
+        color: while;
+        background-color:black;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+</style>
+```
+
+<br>
+
+## `Inline CSS:`
+CSS is applied directly to individual HTML elements using the "style" attribute.
+
+syntax
+```html
+<tagname style="property:value;">
+```
+
+example
+```html
+<h1 style="text-align:center;"> Hello World </h1>
+```
+
+<br>
+
+[`Back To Top`](#cascading-style-sheets)
+___
+
+<br>
+
+# `Rules`
+A `CSS Rule` consists of one or more declarations, associated with a selector and defines how the selected elements should be styled.
+
+<br>
+
+```
+------------------------|
+selector {              |
+  property:value;       |
+  property:value;       |--CSS Rule
+  property:value;       |
+}                       |
+------------------------|
+```
+
+<br>
+
+rule example:
+```css
+body{
+  margin:0;
+  padding:0;
+  border:none;
+  background-color:black;
+  color:white;
+}
+```
+
+<br>
+
+[`Back To Top`](#cascading-style-sheets)
+___
+
+<br>
+
+# `Selectors`
+
+A `CSS Selector` is a pattern used to select and style HTML elements. 
+* Selectors can target elements, classes, IDs, attributes, or combinations of these.
+
+syntax
+```css
+selector {
+  /* Declaration Block */
+}
+```
+
+<br>
+
+example: (`body` is the selector )
+```css
+body{
+  background-color: black;
+}
+```
+
+<br>
+
+[`Back To Top`](#cascading-style-sheets)
+___
+
+<br>
+
+# `Declaration Block`
+A `declaration block` is a group of one or more declarations within curly braces `{}` that are apart of a CSS rule. 
+
+```
+selector {              
+------------------------|
+  property:value;       |
+  property:value;       |--Declaration Block
+  property:value;       |
+------------------------|
+}                       
+```
+<br>
+
+declaration block example:
+```css
+body{
+  /*block start*/
+  margin:0;
+  padding:0;
+  border:none;
+  background-color:black;
+  color:white;
+  /*block end*/
+}
+```
+
+<br>
+
+[`Back To Top`](#cascading-style-sheets)
+___
+
+<br>
+
+# `Declarations`
+
+A CSS `Property` an attribute of an element that you want to style. 
+* Examples include color, font-size, margin, and background-color.
+
+<br>
+
+A CSS `Value` is the specific setting assigned to a CSS property. 
+* For example, #333 is a value for the color property.
+
+<br>
+
+A CSS `Declaration` is the combination of a CSS `property` and its corresponding `value`. 
+* Declarations are enclosed in curly braces `{}`.
+
+<br>
+
+syntax:
+
+```css
+selector {
+
+    property: value;
+    |--------------|
+          |
+      Declaration
+}
+```
+
+external/internal css example:
+```css 
+body {
+  color: #FF0000;                 /* declaration */
+  background-color: rgb(0,0,0);   /* declaration */   
+  font-size: 24px;                /* declaration */
+}
+```
+
+inline css example: `background-color:rgb(0,0,0);`
+```html
+<body style="background-color:rgb(0,0,0);">
+
+
+</body>
+```
+
+<br>
+
+[`Back To Top`](#cascading-style-sheets)
+___
+
+<br>
+
+
+
 # `Comments`
 `CSS Comments` are made using an opening `/*` and a closing `*/`
 
@@ -147,36 +399,9 @@ ___
 
 <br>
 
-# `Selectors`
-
-A `CSS Selector` is a pattern used to select and style HTML elements. 
-* Selectors can target elements, classes, IDs, attributes, or combinations of these.
-
-syntax
-```css
-selector {
-  /* Declaration Block */
-}
-```
-
-<br>
-
-example
-```css
-body{
-  background-color: black;
-}
-```
-
-<br>
-
-[`Back To Top`](#cascading-style-sheets)
-___
-
-<br>
 
 # `Classes`
-A `CSS Class` A way to apply styles to multiple elements. 
+A `CSS Class` is a way to apply styles to multiple elements using the class attribute. 
 * Define a CSS `class` with a period `.` and a name
 * Attach the class to an HTML `element` with the class attribute.
 
@@ -191,7 +416,7 @@ syntax:
 example
 ```css
 .highlight{
-  color: yellow;
+  backgroun-color: yellow;
 }
 ```
 
@@ -277,7 +502,7 @@ ___
 <br>
 
 # `IDs`
-A `CSS ID` is similar to a class but should be unique on a page. 
+A `CSS ID` is a way to apply styling to a specific element. An ID is similar to a class but should be unique on a page. 
 * Define an ID with a hash `#` in CSS
 * Attach an ID to an HTML Element with the id attribute.
 
@@ -297,9 +522,7 @@ example:
 
 HTML ID Attribute syntax:
 ```html
-
 <p id = "special"> This is a paragraph with a special attribute </p>
-
 ```
 <br>
 
@@ -309,102 +532,7 @@ ___
 <br>
 
 
-# `Declarations`
 
-A CSS `Property` an attribute of an element that you want to style. 
-* Examples include color, font-size, margin, and background-color.
-
-<br>
-
-A CSS `Value` is the specific setting assigned to a CSS property. 
-* For example, #333 is a value for the color property.
-
-<br>
-
-A CSS `Declaration` is the combination of a CSS `property` and its corresponding `value`. 
-* Declarations are enclosed in curly braces `{}`.
-
-<br>
-
-syntax:
-
-```css
-selector {
-
-    property: value;
-    |--------------|
-          |
-      Declaration
-}
-```
-
-external/internal css example:
-```css 
-body {
-  color: #FF0000;
-  background-color: rgb(0,0,0);
-  font-size: 24px;
-}
-```
-
-inline css example:
-```html
-
-<body style="background-color:rgb(0,0,0)"></body>
-```
-
-<br>
-
-[`Back To Top`](#cascading-style-sheets)
-___
-
-<br>
-
-# `Rules`
-A `CSS Rule` consists of one or more declarations, associated with a selector and defines how the selected elements should be styled.
-
-<br>
-
-```
-------------------------|
-selector {              |
-  property:value;       |
-  property:value;       |--CSS Rule
-  property:value;       |
-}                       |
-------------------------|
-```
-
-<br>
-
-[`Back To Top`](#cascading-style-sheets)
-___
-
-<br>
-
-# `Declaration Block`
-A `declaration block` is a group of one or more declarations within curly braces `{}` that are apart of a CSS rule. 
-
-```
-
-selector {              
-------------------------|
-  property:value;       |
-  property:value;       |--Declaration Block
-  property:value;       |
-------------------------|
-}                       
-
-```
-<br>
-
-
-<br>
-
-[`Back To Top`](#cascading-style-sheets)
-___
-
-<br>
 
 
 # `RGB Color Values`
@@ -445,105 +573,7 @@ ___
 
 <br>
 
-# `Adding CSS to HTML`
-There are 3 ways to add CSS to an HTML File
-* `External CSS` --> In a separate file (`styles.css`)
-* `Internal CSS` --> Inside of `<style>` tags
-* `Inline CSS` --> Using the `style` attribute
 
-<br>
-
-## `External CSS:`
-CSS is stored in a separate external file (styles.css) and linked to the HTML document.
-
-<br>
-
-Use the `<link>` tag embed exteral CSS
-
-syntax
-```
-<link rel="stylesheet" type="text/css" href="<FILEPATH>">
-```
-
-example
-```html
-<link rel="stylesheet" type="text/css" href="styles.css">
-```
-
-External styles.css file
-```css
-body {
-    color: while;
-    background-color:black;
-}
-
-h1 {
-    text-align: center;
-}
-```
-
-<br>
-
-
-## `Internal CSS:`
-The `<style>` tag is used to embed CSS Cascading Style Sheets within the HTML document.
-
-<br>
-
-syntax
-```html
-<style>
-    selector {
-        property:value;
-        property:value;
-        property:value;
-    }
-
-    selector {
-        property:value;
-        property:value;
-        property:value;
-    }
-
-</style>
-```
-
-example
-```html
-<style>
-    body {
-        color: while;
-        background-color:black;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-</style>
-```
-
-<br>
-
-## `Inline CSS:`
-CSS is applied directly to individual HTML elements using the "style" attribute.
-
-syntax
-```html
-<tagname style="property:value;">
-```
-
-example
-```html
-<h1 style="text-align:center;"> Hello World </h1>
-```
-
-<br>
-
-[`Back To Top`](#cascading-style-sheets)
-___
-
-<br>
 
 # `HTML and CSS Example`
 ```html

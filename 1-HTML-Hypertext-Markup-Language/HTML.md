@@ -13,9 +13,12 @@ ___
 Covered in this file:
 
 1. [`HTML Defined`](#html-defined)
+1. [`HTML Files`](#html-files)
+1. [`Structure of an HTML Document`]
 1. [`Comments`](#comments)
-1. [`Elements`](#elements)
 1. [`Tags`](#tags)
+1. [`Elements`](#elements)
+    1. [`Parent and Child Elements`](#parent-and-child-elements)
 1. [`Attributes`](#attributes)
 1. [`Organizing HTML`](#organizing-html)
 
@@ -31,7 +34,7 @@ ___
 <br>
 
 # `HTML Defined`
-`HTML (Hypertext Markup Language)` is the standard language for creating and structuring web documents. It uses a system of tags and attributes to define the elements on a webpage, including headings, paragraphs, links, and more. HTML provides the basic structure for content on the World Wide Web and is essential for creating web pages. 
+`HTML (Hypertext Markup Language)` is the standard language for creating and structuring web documents. It uses a system of `tags` and `attributes` to define the elements on a webpage, including headings, paragraphs, links, and more. HTML provides the basic structure for content on the World Wide Web and is essential for creating web pages. 
 
 <br>
 
@@ -40,6 +43,56 @@ ___
 [`Back To Top`](#hypertext-markup-language)
 
 <br>
+
+# `HTML Files`
+`HTML files` are plain text files that use tags to define structure and content.
+* HTML files use the `.html` file extension.
+* The default .html file is called `index.html`. 
+    * This is because webservers like Apache and Nginx automatically serve a file named `index.html` when looking inside of a directory.
+
+To get started create a file called `index.html`, and open this file in a text editor program. 
+
+
+<br>
+
+___
+
+[`Back To Top`](#hypertext-markup-language)
+
+<br>
+
+# `Structure of an HTML Document`
+An HTML document uses sets of `tags`, and `attributes` to define `elements` of a webpage.
+
+The basic structure of a document looks like this:
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+
+    </body>
+</html>
+```
+| Element          | Description |
+|-----------------|-------------|
+| `<!DOCTYPE html>` | Declares the document type and version of HTML (HTML5). It ensures proper rendering in modern browsers. |
+| `<html>` | The root element that contains all the content of the HTML document. |
+| `<head>` | Contains metadata about the document, such as the title, character encoding, and linked resources (CSS, JS). |
+| `<body>` | Contains the main content of the web page, including text, images, links, and other elements visible to users. |
+
+
+
+<br>
+
+___
+
+[`Back To Top`](#hypertext-markup-language)
+
+<br>
+
 
 # `Comments`
 A `comment` in HTML is a way to add annotations or notes within the code. Comments are not displayed in the browser and are ignored during the rendering of the webpage. They serve as helpful explanations for developers and are crucial for code documentation. 
@@ -57,6 +110,36 @@ multi-line
 HTML 
 Comment 
 -->
+```
+
+<br>
+
+___
+
+[`Back To Top`](#hypertext-markup-language)
+
+<br>
+
+# `Tags`
+A `tag` in HTML is a fundamental building block that defines an element. 
+It consists of an opening tag, content, and a closing tag. Tags are used 
+to structure and format the content on a webpage, providing a standardized 
+way to create and display various elements such as headings, paragraphs, 
+links, etc. 
+
+<br>
+
+`Opening Tag`: This is the start of the element and is enclosed in angle brackets (`< >`). 
+```html
+<tag>
+```
+
+<br>
+
+
+`Closing Tag`: This marks the end of the element and is similar to the opening tag but with a forward slash `/` before the element name.
+```html
+</tag>
 ```
 
 <br>
@@ -146,6 +229,34 @@ example:
 </html>
 ```
 
+
+<br>
+
+## `Self Contained Elements`
+`Self-contained elements`, are elements that do not have content or a closing tag.
+* also known as void elements or self-closing elements
+* they stand alone and perform a specific function.
+
+Common uses:
+1. Media (pictures, video, audio)
+1. Line breaks
+1. Metadata
+
+example:
+```html
+<!--Images >>> self contained img element-->
+<img src="imagefile.png" alt="Description of image" width="500px">
+```
+```html
+<!--Line breaks >>> self contained br element-->
+Adding a break tag to start a new line <br>
+This text will appear on a new line
+```
+```html
+<!--Metadata >>> self contained meta element-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
 <br>
 
 ___
@@ -154,35 +265,7 @@ ___
 
 <br>
 
-# `Tags`
-A `tag` in HTML is a fundamental building block that defines an element. 
-It consists of an opening tag, content, and a closing tag. Tags are used 
-to structure and format the content on a webpage, providing a standardized 
-way to create and display various elements such as headings, paragraphs, 
-links, etc. 
 
-<br>
-
-`Opening Tag`: This is the start of the element and is enclosed in angle brackets (`< >`). 
-```html
-<tag>
-```
-
-<br>
-
-
-`Closing Tag`: This marks the end of the element and is similar to the opening tag but with a forward slash `/` before the element name.
-```html
-</tag>
-```
-
-<br>
-
-___
-
-[`Back To Top`](#hypertext-markup-language)
-
-<br>
 
 # `Attributes`
 `Attributes` in HTML provide additional information or behavior to elements. 
@@ -205,94 +288,69 @@ ___
 
 <br>
 
+
 # `Organizing HTML`
-When you're writing HTML code, it's a good idea to organize it neatly. You can do this by adding spaces or tabs at the beginning of each line to create a consistent structure. For every child element (like a paragraph or heading) inside a parent element (like a section or body), you should indent them to show their relationship. 
+When you're writing HTML code, it's a good idea to organize it neatly. 
 
-This helps make your HTML code more readable and easier to understand. 
+To make your HTML code readable:
+1. Indent child elements inside of thier parent elements (2 or 4 spaces)
+1. Keep lines short. Long lines should be broken onto new lines when necessary
+1. Use lowercase attribute names
+1. Group your elements into blocks with containers like \<div\>
+1. Keep HTML, CSS, and JavaScript in seperate files.
 
 
 
-
+A Simple Example of Proper Structure:
 ```html
 <!DOCTYPE html> 
 <html lang="en-us"> 
-
     <head>
         <title>Page Title</title> 
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="script.js"></script>
     </head> 
     <body> 
 
-        <h1>This is a heading</h1> 
-
-        <p>This is a paragraph.</p> 
-        
-        <a href="https://www.w3schools.com">This is a link</a> 
-
-        <img src="image.png" alt="alt text here"> 
-
+        <!--Dividers are containers that are block level (stack on top of each other)-->
         <div>
-            
-            <!-- div content -->
-
+            <h1>Group Your Content with div tags</h1> 
+            <p>
+                Your content should be grouped into blocks using div tags.<br>
+                div elements stack on top of each other.
+            </p>
         </div>
 
-    </body> 
     
-</html> 
+        <!--Spans are containers that are inline (stack next to each other)-->
+        <span>Stack</span>
+        <span>Side</span>
+        <span>by</span>
+        <span>Side</span>
 
-
-
-```
-```html
-<!-- This is an HTML comment, it allows developers to make notes inside of their HTML -->
-
-<!DOCTYPE html> 
-<!-- This declaration defines the document to be HTML5 -->
-
-<html lang="en-us"> 
-<!-- This is the opening tag for the HTML document, specifying the language as English (United States) -->
-  
-    <head>
-    <!--This is the opening tag for the head of the HTML document-->
-        
-        <title>Page Title</title> 
-        <!-- This is the title of the HTML document, displayed in the browser's title bar or tab -->
-    
-    </head> 
-    <!--This is the closing tag for the head of the HTML document-->
-
-    <body> 
-    <!-- This is the opening tag for the body of the HTML document, where the content is placed -->
-
-        <h1>This is a heading</h1> 
-        <!-- This is a level 1 heading, used to define the main heading of the document -->
-        
-
-        <p>This is a paragraph.</p> 
-        <!-- This is a paragraph tag, used to define a block of text as a paragraph -->
-        
-
-        <a href="https://www.w3schools.com">This is a link</a> 
-        <!-- This is an anchor tag to define hyperlinks and create clickable text/images-->
-
-
-        <img src="image.png" alt="alt text here"> 
-        <!--This is the HTML image element. It is used to embed images into a webpage -->
 
 
         <div>
-        <!--
-            The HTML <div> element is a generic container or a division 
-            that is used to group and structure content on a webpage. 
-            The term "div" stands for "division.
-        -->
+            <h1>This is a heading</h1> 
+            <p>This is a paragraph.</p> 
         </div>
 
+
+        <div>
+            <a href="https://www.w3schools.com">This is a link</a> 
+        </div>
+        
+
+        <div>
+            <img src="image.png" alt="alt text here">
+        </div>
+
+
     </body> 
-    <!-- This is the closing tag for the body of the HTML document -->
 </html> 
-<!-- This is the closing tag for the HTML document -->
 ```
+
+
 
 <br>
 

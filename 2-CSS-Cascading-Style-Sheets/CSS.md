@@ -125,25 +125,26 @@ ___
 
 # `Adding CSS to HTML`
 There are 3 ways to add CSS to an HTML File
-* `External CSS` --> In a separate file (`styles.css`)
-* `Internal CSS` --> Inside of `<style>` tags
-* `Inline CSS` --> Using the `style` attribute
+* `External CSS` --> In a separate file with a `.css` extension (default filename is `styles.css`)
+* `Internal CSS` --> Inside of `<style>` tags in the html file
+* `Inline CSS` --> Using the `style` attribute inside of a html tag
 
 <br>
 
 ## `External CSS:`
-CSS is stored in a separate external file (styles.css) and linked to the HTML document.
+`External CSS` is CSS stored within a separate external file with the `.css extension` and linked to the HTML document with a `<link>` tag.
+* CSS files use the `.css` extension.
+* `styles.css` is the default filename for `.css` files
 
 <br>
 
-Use the `<link>` tag embed exteral CSS
-
-syntax
+Use the `<link>` tag to embed (connect) and external CSS file within an HTML file.
+syntax:
 ```
 <link rel="stylesheet" type="text/css" href="<FILEPATH>">
 ```
 
-example
+example:
 ```html
 <link rel="stylesheet" type="text/css" href="styles.css">
 ```
@@ -164,7 +165,7 @@ h1 {
 
 
 ## `Internal CSS:`
-The `<style>` tag is used to embed CSS Cascading Style Sheets within the HTML document.
+`Internal CSS` is CSS that is written within `<style>` tags inside of an html file.
 
 <br>
 
@@ -204,7 +205,7 @@ example
 <br>
 
 ## `Inline CSS:`
-CSS is applied directly to individual HTML elements using the "style" attribute.
+`Inline CSS` is CSS that is applied directly to individual HTML elements using the `style=` attribute.
 
 syntax
 ```html
@@ -322,7 +323,7 @@ ___
 
 # `Declarations`
 
-A CSS `Property` an attribute of an element that you want to style. 
+A CSS `Property` is an attribute of an element that you want to style. 
 * Examples include color, font-size, margin, and background-color.
 
 <br>
@@ -407,13 +408,13 @@ A `CSS Class` is a way to apply styles to multiple elements using the class attr
 
 
 syntax:
-```css
+```
 .classname {
   /* Declaration Block */
 }
 ```
 
-example
+example: Writing a class
 ```css
 .highlight{
   background-color: yellow;
@@ -421,17 +422,20 @@ example
 ```
 
 <br>
+<br>
 
 HTML Class Attribute
 syntax:
-```html
+```
 <tag class = "classname"> </tag>
 ```
 
-example:
+example: Attaching a class to an html element
 
 ```html
-<p class = "highlight"> This is a paragraph with a class attribute </p> 
+<div class = "highlight">
+
+</div>
 ```
 
 
@@ -445,17 +449,54 @@ ___
 # `Pseudo-classes`
 A CSS `Pseudo-class` is a keyword added to a selector to style a specific state or condition of an element.
 
+syntax:
 ```css
 selector:pseudo-class {
   /* Declaration Block */
 }
 ```
-example:
+
+example: Using the `hover` psuedo-class
 ```css
 div:hover{
   background-color:aqua;
 }
 ```
+
+<br>
+
+### `Common CSS Pseudo-Classes`
+
+| Pseudo-Class       | Description |
+|--------------------|-------------|
+| `:hover`          | Styles an element when hovered over. |
+| `:focus`          | Styles an element when it gains focus (e.g., an input field). |
+| `:active`         | Styles an element when it is being clicked. |
+| `:visited`        | Styles links that have been visited. |
+| `:link`           | Styles unvisited links. |
+| `:checked`        | Targets checked `<input>` elements (checkboxes, radio buttons). |
+| `:disabled`       | Targets disabled form elements. |
+| `:enabled`        | Targets enabled form elements. |
+| `:required`       | Targets form elements with the `required` attribute. |
+| `:optional`       | Targets form elements that are not required. |
+| `:valid`          | Targets form inputs that pass validation. |
+| `:invalid`        | Targets form inputs that fail validation. |
+| `:nth-child(n)`   | Targets the nth child of a parent (e.g., `:nth-child(2)` selects the second child). |
+| `:nth-last-child(n)` | Targets the nth child from the end. |
+| `:first-child`    | Targets the first child of a parent. |
+| `:last-child`     | Targets the last child of a parent. |
+| `:only-child`     | Targets an element if it is the only child of its parent. |
+| `:nth-of-type(n)` | Targets the nth element of a specific type within a parent. |
+| `:first-of-type`  | Targets the first element of a specific type within a parent. |
+| `:last-of-type`   | Targets the last element of a specific type within a parent. |
+| `:only-of-type`   | Targets an element if it is the only one of its type within a parent. |
+| `:not(selector)`  | Excludes elements that match the given selector. |
+| `:empty`          | Targets elements with no children (including text nodes). |
+| `:root`           | Targets the root element (`<html>` in HTML). |
+| `:is(selector, selector)` | Matches any element that matches one of the given selectors (simplifies complex selectors). |
+| `:where(selector, selector)` | Similar to `:is()`, but has no specificity impact. |
+| `:has(selector)`  | Targets elements that contain a specified child or descendant (e.g., `div:has(img)` selects `div` elements containing an `<img>`). |
+
 
 <br>
 
@@ -507,22 +548,32 @@ A `CSS ID` is a way to apply styling to a specific element. An ID is similar to 
 * Attach an ID to an HTML Element with the id attribute.
 
 syntax:
-```css
-#id {
+```
+#idname {
   /* Declaration Block */
 }
 ```
 
-example:
+example: Writing a CSS ID
 ```css
 #special {
   border: 2pt solid black;
 }
 ```
 
+<br>
+<br>
+
 HTML ID Attribute syntax:
+```
+<tag id = "idname"> content </tag>
+```
+
+example: Attaching an ID to a html element
 ```html
-<p id = "special"> This is a paragraph with a special attribute </p>
+<div id = "special">
+
+</div>
 ```
 <br>
 
@@ -530,10 +581,6 @@ HTML ID Attribute syntax:
 ___
 
 <br>
-
-
-
-
 
 # `RGB Color Values`
 The `RGB (Red, Green, Blue)` color model is a widely used color model in digital imaging and displays. It represents colors by combining different intensities of red, green, and blue light.

@@ -190,7 +190,7 @@ example
 ```html
 <style>
     body {
-        color: while;
+        color: white;
         background-color:black;
     }
 
@@ -416,7 +416,7 @@ syntax:
 example
 ```css
 .highlight{
-  backgroun-color: yellow;
+  background-color: yellow;
 }
 ```
 

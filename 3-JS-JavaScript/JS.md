@@ -15,6 +15,9 @@ ___
 Covered in this file:
 1. [`JavaScript Defined`](#javascript-defined)
 1. [`Adding JS to HTML`](#adding-js-to-html)
+    1. [`External JavaScript`](#external-javascript)
+    1. [`Internal JavaScript`](#internal-javascript)
+    1. [`Inline JavaScript`](#inline-javascript)
 1. [`Comments`](#comments)
 1. [`Data Representation`](#data-representation)
 1. [`Variables`](#variables)
@@ -34,9 +37,12 @@ ___
 
 # `JavaScript Defined`
 `JavaScript (JS)` is a high-level, interpreted programming language designed to make web pages interactive and dynamic.
-* `JavaScript` can be used for client-side scripting to create dynamic content, handle events, and interact with the user.
 * Javascript files have the file extension `.js`
+* `script.js` is the default filename of JavaScript files. 
 
+<br>
+
+`JavaScript` can be used for client-side scripting to create dynamic content, handle events, and interact with the user.
 
 <br>
 
@@ -47,10 +53,29 @@ ___
 <br>
 
 # `Adding JS to HTML`
-There are 3 ways that Javascript can be added to an HTML file
+There are 3 ways that Javascript can be added to an HTML file.
+1. `External JavaScript` (linking to a separate .js file)
+1. `Internal JavaScript` (JavaScript written inside of `<script>` tags in the `.html` file)
+1. `Inline JavaScript` (JavaScript written inside of a HTML attribute, ie. `onclick=`)
 
-`External JavaScript:`
-* JavaScript code is stored in a separate external file (ex: script.js) and linked to the HTML document.
+<br>
+
+## `External JavaScript:`
+`External JavaScript` is JavaScript code that is stored in a separate external file (ex: `script.js`) and linked to the HTML document using `<script>` tags.
+* Use `<script>` tags with the `src=` attribute to link to a an external `.js` file. 
+
+<br>
+
+syntax:
+```
+<script src="<FILEPATH>"></script>
+```
+example
+```html
+<script src="script.js"></script>
+```
+Generally the `<script>` tags are placed between the `<head>` tags in the `.html` file. <br>
+As shown below:
 
 ```html
 <!DOCTYPE html> 
@@ -63,11 +88,7 @@ There are 3 ways that Javascript can be added to an HTML file
 
 
   </head> 
-
   <body> 
-
-    <h1>This is a heading</h1> 
-    <p>This is a paragraph.</p> 
 
   </body> 
 </html> 
@@ -75,8 +96,34 @@ There are 3 ways that Javascript can be added to an HTML file
 
 <br>
 
-`Internal JavaScript:`
-* JavaScript code is directly written within the `<script>` tags in the HTML document.
+## `Internal JavaScript:`
+`Internal JavaScript` is JavaScript code directly written within `<script>` tags inside of the `.html` file.
+* Write Internal JavaScript inside of `<script>` tags inside the `.html` file.  
+
+<br>
+
+syntax:
+```
+<script>
+    
+    JavaScript code written here.
+
+</script>
+```
+example:
+```html
+<script>
+
+  function count(){
+    for(let i = 1; i < 11; i++){
+      console.log(i);
+    }
+  }
+
+</script>
+```
+Generally the `<script>` tags are placed between the `<head>` tags in the `.html` file. <br>
+As shown below:
 
 ```html
 <!DOCTYPE html> 
@@ -91,14 +138,14 @@ There are 3 ways that Javascript can be added to an HTML file
         console.log("We use console.log() to show output in JavaScript")
       }
 
+      function alertMessage(){
+        alert("This is an alert popup message!")
+      }
+
     </script>
 
   </head> 
-
   <body> 
-
-    <h1>This is a heading</h1> 
-    <p>This is a paragraph.</p> 
 
   </body> 
 </html> 
@@ -106,9 +153,19 @@ There are 3 ways that Javascript can be added to an HTML file
 
 <br>
 
-`Inline JavaScript:`
-* JavaScript code is added directly to HTML elements using the `"onclick"` attribute or other event attributes.
+## `Inline JavaScript:`
+`Inline JavaScript` is JavaScript code that is written directly inside of a HTML element using an event attribute (ex. `onclick=`).
+* A table of event attributes is provide below.
 
+syntax:
+```
+<tag attribute="<JAVASCRIPT>"> content </tag>
+```
+example:
+```html
+<button onclick="myFunction()"> Click Me! </button>
+```
+Inline JavaScript can be added to most tags. Here is an example of Inline JS attached to button elements. 
 ```html
 <!DOCTYPE html> 
 <html lang="en-us"> 
@@ -119,7 +176,11 @@ There are 3 ways that Javascript can be added to an HTML file
     <script>
 
       function showMessage() {
-        console.log("We use console.log() to show output in JavaScript")
+        console.log("We use console.log() to show output in JavaScript");
+      }
+
+      function alertMessage(){
+        alert("This is an alert popup message!")
       }
 
     </script>
@@ -132,15 +193,45 @@ There are 3 ways that Javascript can be added to an HTML file
     <p>This is a paragraph.</p> 
 
     <!-- 
-     Inline JavaScript: is typically paired with interal or external js, and uses
-     special event attributes
+     Inline JavaScript: is typically paired with internal or external js, and uses
+     special event attributes such as 'onclick='
     -->
-    <button onclick="showMessage1()">1. Click Me </button>
-    <button onclick="showMessage2()">2. Click Me </button>
+    <button onclick="showMessage()">1. Click Me </button>
+    <button onclick="alertMessage()">2. Click Me </button>
 
   </body> 
 </html> 
 ```
+
+<br>
+
+Below is a list of common event attributes and their descriptions.
+| Event Attribute | Description                                | Commonly Used On         |
+|------------------|--------------------------------------------|---------------------------|
+| `onclick`        | Fires when an element is clicked           | Buttons, links, divs      |
+| `ondblclick`     | Fires when an element is double-clicked    | Buttons, divs             |
+| `onmousedown`    | Fires when mouse button is pressed         | All visible elements      |
+| `onmouseup`      | Fires when mouse button is released        | All visible elements      |
+| `onmouseover`    | Fires when mouse pointer enters element    | All visible elements      |
+| `onmouseout`     | Fires when mouse pointer leaves element    | All visible elements      |
+| `onmousemove`    | Fires when mouse moves within element      | All visible elements      |
+| `onkeydown`      | Fires when a key is pressed down           | Input, textarea, document |
+| `onkeyup`        | Fires when a key is released               | Input, textarea, document |
+| `onkeypress`     | Fires when a key is pressed (deprecated)   | Input, textarea           |
+| `onchange`       | Fires when value of element changes        | Input, select, textarea   |
+| `oninput`        | Fires when user input is received          | Input, textarea           |
+| `onsubmit`       | Fires when a form is submitted             | Form                      |
+| `onreset`        | Fires when a form is reset                 | Form                      |
+| `onfocus`        | Fires when element gains focus             | Input, textarea, links    |
+| `onblur`         | Fires when element loses focus             | Input, textarea, links    |
+| `onload`         | Fires when the page or image loads         | Body, img, iframe         |
+| `onunload`       | Fires when page is unloaded (deprecated)   | Body                      |
+| `onresize`       | Fires when window or element is resized    | Window, iframe            |
+| `onscroll`       | Fires when an element is scrolled          | Window, div               |
+| `oncontextmenu`  | Fires when right-click menu is triggered   | All visible elements      |
+| `onerror`        | Fires when an error occurs loading content | Img, script, iframe       |
+| `onwheel`        | Fires when mouse wheel is used             | All visible elements      |
+
 
 <br>
 
@@ -457,7 +548,7 @@ function add(x,y){  // x and y are called parameters
 
 ## `Function Calling`
 `Function Calling` is the act of instructing a function to execute.
-* This involves using the function's name folled by parenthesis `()`, which may or may not contain values called arguements depending on the definition.
+* This involves using the function's name followed by parenthesis `()`, which may or may not contain values called arguements depending on the definition.
 
 ```js
 hello(); // calling the hello function

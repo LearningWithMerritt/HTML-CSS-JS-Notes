@@ -14,7 +14,7 @@ Covered in this file:
 
 1. [`HTML Defined`](#html-defined)
 1. [`HTML Files`](#html-files)
-1. [`Structure of an HTML Document`]
+1. [`Structure of an HTML Document`](#structure-of-an-html-document)
 1. [`Comments`](#comments)
 1. [`Tags`](#tags)
 1. [`Elements`](#elements)

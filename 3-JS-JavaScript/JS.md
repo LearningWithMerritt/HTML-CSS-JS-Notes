@@ -467,11 +467,13 @@ ___
 `Control Flow Statements` control the flow of program execution, examples include conditionals and loops. 
 
 `Loops` are blocks of code used for repetitive execution of code.
-* Loops used the keywords `while` and `for`
+* Loops use the keywords `while` and `for`
 
 <br>
 
+## `While Loops`
 `While Loops` repeat a block of code as long as a specified condition is `true`.
+* while loops begin with the `while` keyword.
 ```js
 let count = 1;
 
@@ -496,7 +498,10 @@ while(count <= 10){
 
 <br>
 
+## `For Loops`
+
 `For Loops` are used for iterating(looping) over a range of values or elements(items).
+* for loops begin with the `for` keyword
 ```js
 for(let i = 0; i < 5; i++){
    console.log("Looping " + i);
